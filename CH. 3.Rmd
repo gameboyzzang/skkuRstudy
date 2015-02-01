@@ -1,0 +1,166 @@
+---
+title: "CH. 3"
+output:
+  html_document:
+    keep_md: yes
+---
+
+벡터를 생성하는 c()함수
+
+```{r}
+metallica <- c('Lars','James','Jason','Kirk')
+metallica
+```
+
+벡터에서 특정 값 빼기
+
+```{r}
+metallica <- metallica[metallica != 'Jason']
+metallica
+```
+
+벡터에 특정 값 추가
+
+```{r}
+metallica <- c(metallica, 'Rob')
+metallica
+```
+
+R의 기본 내장 데이터들 불러오는 함수
+
+```{r}
+data()
+```
+
+기본 내장 데이타는 테이터 이름만 입력해도 볼수 있음
+
+```{r}
+trees
+```
+
+setwd()로 설정한 현재 작업공간(Working Directory)이 어디인지 알아보는 getwd()함수
+
+```{r}
+getwd()
+```
+
+함수에 대한 도움말 문서를 불러오는 함수와 예제를 불러오는 함수
+
+```{r}
+#help(함수이름)
+help(sum)
+
+#example(함수이름)
+example(mean)
+```
+
+패키지설치: install.packages()함수 사용, ex: install.packages('패키지이름')
+
+설치한 패키지 사용:library()함수 사용,  ex: library('ggplot2')
+
+파일 불러오기
+
+.csv(엑셀)파일 불러오기: read.csv(),  ex: read.csv('c:/users/Yoo/Documents/abc.csv', header=True) 
+*header=True는 데이터의 첫번째 열이 변수명일때, 변수명이 아니라면 header=False로 해야됨.
+*setwd()로 설정한 현재 작업공간에 데이터 파일이 있으면, 파일명만 입력해도 됨
+예: setwd("c:/users/Yoo/Documents")       
+    read.csv("abc.csv")
+
+.spss파일 불러오기: read.spss 
+*이 함수는 library(foreign)을 입력해서 foreign 패키지를 사용하는 상태에서만 쓸 수 있음.
+
+.txt와 .dat파일 불러오기: read.delim()
+
+
+그냥 library()를 입력할 경우, 설치된 패키지들 보여줌
+
+```{r}
+library()
+```
+
+metallica라는 dataframe생성, data.frame()함수 사용 
+
+```{r}
+metallicaNames <- c('Lars','James','Kirk','Rob')
+metallicaAges <- c(47, 47, 48, 46)
+
+#방금 위에서 생성한 metallicaNames와 metallicaAges 이 두 벡터를
+#data.frame함수를 사용하여 metallica라는 데이터프레임으로 만듬
+metallica <- data.frame(Name=metallicaNames, Age=metallicaAges) 
+#metallica는 Name과 Age라는 두개의 변수를 가지는 데이타 프레임
+metallica
+```
+
+metallica 데이터 프레임 내 각각의 변수 확인
+
+```{r}
+metallica$Name
+metallica$Age
+```
+
+metallica에 Childage라는 변수 추가
+
+```{r}
+metallica$Childage <- c(12, 12, 4, 6)
+metallica
+```
+
+데이터 프레임내 변수명 확인, names()함수 사용
+
+```{r}
+names(metallica)
+```
+
+리스트 생성은 list()함수 사용 
+
+```{r}
+metallicalist <- list(metallicaNames, metallicaAges)
+metallicalist
+```
+
+각각의 변수들을 열로 묶어서 matrix를 만들때는 cbind()함수
+
+```{r}
+metallicamatrix <- cbind(metallicaNames, metallicaAges)
+metallicamatrix
+```
+
+자료 내의 변수들을 조작하여 새변수 생성도 가능함.
+
+Age변수에서 Childage변수를 빼서 아빠가 된 나이인 Fatherhoodage 변수 생성.
+
+```{r}
+metallica$Fatherhoodage <- metallica$Age - metallica$Childage
+metallica
+```
+
+날짜를 변수 값으로 입력할 땐 as.Date()함수 사용
+
+```{r}
+birth_date<-as.Date(c("1977-07-03","1969-05-24","1973-06-21","1970-07-16","1949-10-10","1983-11-05","1987-10-08","1989-09-16","1973-05-20","1984-11-12"))
+```
+
+as.Date로 날짜를 입력할 경우, 날짜끼리 차이가 얼마나 나는지도 계산가능
+
+```{r}
+husband<-as.Date(c("1973-06-21","1970-07-16","1949-10-08","1969-05-24"))
+wife<-as.Date(c("1984-11-12","1973-08-02","1948-11-11","1983-07-23"))
+agegap<-husband-wife
+agegap
+```
+
+동일한 값을 입력할때는 반복해주는 rep()함수 사용
+
+```{r}
+job<-c(rep(1,5),rep(2,5)) #job<-c(1,1,1,1,1,2,2,2,2,2)와 동일
+job
+```
+
+명목척도를 만들 때에는 factor()함수 또는 gl()함수 사용
+
+```{r}
+job <-gl(2,5,labels=c("Lecturer","Student"))
+#또는 job <-factor(job , levels = c(1:2) , labels = c("Lecturer" , "Student"))
+job
+```
+
