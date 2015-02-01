@@ -5,14 +5,13 @@ output:
     keep_md: yes
 ---
 
+
+
+
 벡터를 생성하는 c()함수
 
 ```{r}
-<<<<<<< HEAD
 metallica <- c('Lars','James','Jason','Kirk')
-=======
-metallica <- c('Lars','James','Jason','Kirl')
->>>>>>> 8b30f31e63cf098d046937e5c5c64fe3716c9dc3
 metallica
 ```
 
@@ -42,11 +41,8 @@ data()
 trees
 ```
 
-<<<<<<< HEAD
+
 setwd()로 설정한 현재 작업공간(Working Directory)이 어디인지 알아보는 getwd()함수
-=======
-setwd()로 설정한 현재 작업공간이 어디인지 알아보는 getwd()함수
->>>>>>> 8b30f31e63cf098d046937e5c5c64fe3716c9dc3
 
 ```{r}
 getwd()
@@ -62,12 +58,12 @@ help(sum)
 example(mean)
 ```
 
-<<<<<<< HEAD
+
 패키지설치: install.packages()함수 사용, ex: install.packages('패키지이름')
 
 설치한 패키지 사용:library()함수 사용,  ex: library('ggplot2')
 
-파일 불러오기
+1. 파일 불러오기
 
 .csv(엑셀)파일 불러오기: read.csv(),  ex: read.csv('c:/users/Yoo/Documents/abc.csv', header=True) 
 *header=True는 데이터의 첫번째 열이 변수명일때, 변수명이 아니라면 header=False로 해야됨.
@@ -81,11 +77,41 @@ example(mean)
 .txt와 .dat파일 불러오기: read.delim()
 
 
+2. 파일 저장하기
+
+write.table(metallica,"Metallica Data.txt",sep="\t",row.names=FALSE) 
+*sep="\t"는 데이터 값들을 탭으로 구분
+
+write.table(metallica,"Metallica Data.txt",sep=",",row.names=FALSE) 
+*sep = ","는 데이터 값들을 콤마로 구분
+
+
 그냥 library()를 입력할 경우, 설치된 패키지들 보여줌
 
 ```{r}
 library()
 ```
+
+
+*패키지들에서 함수 이름이 겹치는 경우:
+
+다른  패키지에  이름이 같은 함수가 있어 이럴 경우, 어떤 패키지에 있는 함수를 쓸 것인지 지정해 주어야 한다.
+패키지 car와 Hmisc에는 recode()라는 동일한 이름의 함수가 존재한다.
+따라서 car와 Hmisc를 동시에 불러왔을 때, 
+
+car에 있는 recode()함수를 쓸경우에는
+
+car:: recode()
+
+Hmisc패키지에 있는 recode()함수를 쓸 때는
+
+Hmisc:: recode() 
+
+이런식으로 사용해야 한다.
+
+
+
+
 
 metallica라는 dataframe생성, data.frame()함수 사용 
 
@@ -146,43 +172,129 @@ metallica
 날짜를 변수 값으로 입력할 땐 as.Date()함수 사용
 
 ```{r}
-birth_date<-as.Date(c("1977-07-03","1969-05-24","1973-06-21","1970-07-16","1949-10-10","1983-11-05","1987-10-08","1989-09-16","1973-05-20","1984-11-12"))
+birth_date <- as.Date(c("1977-07-03","1969-05-24","1973-06-21","1970-07-16","1949-10-10","1983-11-05","1987-10-08","1989-09-16","1973-05-20","1984-11-12"))
 ```
 
 as.Date로 날짜를 입력할 경우, 날짜끼리 차이가 얼마나 나는지도 계산가능
 
 ```{r}
-husband<-as.Date(c("1973-06-21","1970-07-16","1949-10-08","1969-05-24"))
-wife<-as.Date(c("1984-11-12","1973-08-02","1948-11-11","1983-07-23"))
-agegap<-husband-wife
+husband <- as.Date(c("1973-06-21","1970-07-16","1949-10-08","1969-05-24"))
+wife <- as.Date(c("1984-11-12","1973-08-02","1948-11-11","1983-07-23"))
+agegap <- husband-wife
 agegap
 ```
 
-동일한 값을 입력할때는 반복해주는 rep()함수 사용
+동일한 값을 입력할 때는 반복해주는 rep()함수 사용
 
 ```{r}
-job<-c(rep(1,5),rep(2,5)) #job<-c(1,1,1,1,1,2,2,2,2,2)와 동일
+job <- c(rep(1,5),rep(2,5)) #job<-c(1,1,1,1,1,2,2,2,2,2)와 동일
 job
 ```
 
 명목척도를 만들 때에는 factor()함수 또는 gl()함수 사용
 
 ```{r}
-job <-gl(2,5,labels=c("Lecturer","Student"))
+job <- gl(2,5,labels=c("Lecturer","Student"))
 #또는 job <-factor(job , levels = c(1:2) , labels = c("Lecturer" , "Student"))
 job
 ```
-=======
 
+데이타 프레임 다루기
 
+데이타 프레임 만들기
 ```{r}
-
+name<-c("Ben","Martin","Andy","Paul","Graham","carina","Karina","Doug","Mark","Zoe")
+friends <- c(5,2,0,4,1,10,12,15,12,17)
+alcohol <- c(10,15,20,5,30,25,20,16,17,18)
+income <- c(20000,40000,35000,22000,50000,5000,100,3000,10000,10)
+neurotic <- c(10,17,14,13,21,7,13,9,14,13)
+lecturerData <- data.frame(name, birth_date, job, friends, alcohol, income, neurotic)
+lecturerData
 ```
 
+데이타의 결측값은 NA로 입력
+```{r}
+neurotic<-c(10,17,NA,13,21,7,13,9,14,NA)
+```
 
+데이타프레임에서  특정부분만 가져오기
 
+특정 조건의 열만 가져올 때: 데이타프레임이름[,열]
+```{r}
+lecturerpersonality <- lecturerData[,c("friends","alcohol","neurotic")] #[,열]
+lecturerpersonality
+```
 
+특정 조건의 행만 가져올 때: 데이타프레임이름[행,]
+```{r}
+lectureronly <- lecturerData[job =="Lecturer",] #[,열]
+lectureronly
+```
 
+특정 조건의 행과 열을 가져올 때: 데이타프레임이름[행,열]
+```{r}
+alcoholpersonality <- lecturerData[alcohol>10, c("friends","alcohol","neurotic")] #[행,열]
+alcoholpersonality
+```
 
->>>>>>> 8b30f31e63cf098d046937e5c5c64fe3716c9dc3
+데이타프레임의 부분집합 추출: subset()함수 사용
+```{r}
+lectureonly <- subset(lecturerData, job =="Lecturer") #특정 조건만
+lectureonly
+```
+
+특정 조건에서 특정 변수만
+```{r}
+alcoholicpersonality <- subset(lecturerData, alcohol > 10, select = c("friends","alcohol","neurotic"))
+alcoholicpersonality
+```
+
+매트릭스로 빼낼수도 있음
+```{r}
+alcoholpersonalityMatirix <- as.matrix(lecturerData[ alcohol > 10, c("friends","alcohol","neurotic")])
+```
+
+또는 이미 빼낸 subset을 매트릭스로 변환
+```{r}
+alcoholpersonalitymatirix <- as.matrix(alcoholicpersonality)
+```
+
+*as.Date(), as.matrix(), as.factor() 등등 as.데이타형식() 함수는 데이타의 형식을 바꿔주는 기능을 함.
+
+데이타 수정하기
+
+여러 변수들을 하나로 합칠때: reshape 패키지의 stack()함수 사용
+```{r}
+satisfactionData <- read.delim('Honeymoon Period.dat', header = TRUE)
+satisfactionData
+#데이타를 콘솔창 말고 데이타 창으로 보고싶을 땐 View(satisfactionData)
+```
+
+```{r}
+library(reshape)
+satisfactionStacked <- stack(satisfactionData, select = c("Satisfaction_Base","Satisfaction_6_Months",
+                                                          "Satisfaction_12_Months","Satisfaction_18_Months"))
+satisfactionStacked
+```
+
+합친 변수들을 다시 나누고 싶으면 unstack()함수 사용
+```{r}
+satisfactionUnstacked <- unstack(satisfactionStacked)
+#또는  satisfactionUnstacked<-unstack(satisfactionStacked , values~ind)
+satisfactionUnstacked
+```
+
+좀더 정교하게 변수를 합치고 싶다면 melt()함수 사용
+```{r}
+restructuredData <- melt(satisfactionData, id = c("Person" , "Gender"), measured = c("Satisfaction_Base",
+                                                                                     "Satisfaction_6_Months", "Satisfaction_12_Months", "Satisfaction_18_Months"))
+restructuredData
+```
+
+melt()함수로 합친 변수를 다시 되돌리려면 cast()함수 사용
+```{r}
+wideData <- cast(restructuredData , Person + Gender ~ variable, value="value")
+wideData
+```
+
 
