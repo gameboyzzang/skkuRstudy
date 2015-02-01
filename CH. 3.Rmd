@@ -1,0 +1,68 @@
+---
+title: "CH. 3"
+output:
+  html_document:
+    keep_md: yes
+---
+
+벡터를 생성하는 c()함수
+
+```{r}
+metallica <- c('Lars','James','Jason','Kirl')
+metallica
+```
+
+벡터에서 특정 값 빼기
+
+```{r}
+metallica <- metallica[metallica != 'Jason']
+metallica
+```
+
+벡터에 특정 값 추가
+
+```{r}
+metallica <- c(metallica, 'Rob')
+metallica
+```
+
+R의 기본 내장 데이터들 불러오는 함수
+
+```{r}
+data()
+```
+
+기본 내장 데이타는 테이터 이름만 입력해도 볼수 있음
+
+```{r}
+trees
+```
+
+setwd()로 설정한 현재 작업공간이 어디인지 알아보는 getwd()함수
+
+```{r}
+getwd()
+```
+
+함수에 대한 도움말 문서를 불러오는 함수와 예제를 불러오는 함수
+
+```{r}
+#help(함수이름)
+help(sum)
+
+#example(함수이름)
+example(mean)
+```
+
+
+
+```{r}
+
+```
+
+
+
+
+
+
+
