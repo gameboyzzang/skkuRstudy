@@ -65,6 +65,7 @@ img {
 
 
 <p>벡터를 생성하는 c()함수</p>
+<<<<<<< HEAD
 <pre class="r"><code>metallica &lt;- c('Lars','James','Jason','Kirk')
 metallica</code></pre>
 <pre><code>## [1] &quot;Lars&quot;  &quot;James&quot; &quot;Jason&quot; &quot;Kirk&quot;</code></pre>
@@ -76,6 +77,19 @@ metallica</code></pre>
 <pre class="r"><code>metallica &lt;- c(metallica, 'Rob')
 metallica</code></pre>
 <pre><code>## [1] &quot;Lars&quot;  &quot;James&quot; &quot;Kirk&quot;  &quot;Rob&quot;</code></pre>
+=======
+<pre class="r"><code>metallica &lt;- c('Lars','James','Jason','Kirl')
+metallica</code></pre>
+<pre><code>## [1] &quot;Lars&quot;  &quot;James&quot; &quot;Jason&quot; &quot;Kirl&quot;</code></pre>
+<p>벡터에서 특정 값 빼기</p>
+<pre class="r"><code>metallica &lt;- metallica[metallica != 'Jason']
+metallica</code></pre>
+<pre><code>## [1] &quot;Lars&quot;  &quot;James&quot; &quot;Kirl&quot;</code></pre>
+<p>벡터에 특정 값 추가</p>
+<pre class="r"><code>metallica &lt;- c(metallica, 'Rob')
+metallica</code></pre>
+<pre><code>## [1] &quot;Lars&quot;  &quot;James&quot; &quot;Kirl&quot;  &quot;Rob&quot;</code></pre>
+>>>>>>> 8b30f31e63cf098d046937e5c5c64fe3716c9dc3
 <p>R의 기본 내장 데이터들 불러오는 함수</p>
 <pre class="r"><code>data()</code></pre>
 <p>기본 내장 데이타는 테이터 이름만 입력해도 볼수 있음</p>
@@ -112,7 +126,11 @@ metallica</code></pre>
 ## 29  18.0     80   51.5
 ## 30  18.0     80   51.0
 ## 31  20.6     87   77.0</code></pre>
+<<<<<<< HEAD
 <p>setwd()로 설정한 현재 작업공간(Working Directory)이 어디인지 알아보는 getwd()함수</p>
+=======
+<p>setwd()로 설정한 현재 작업공간이 어디인지 알아보는 getwd()함수</p>
+>>>>>>> 8b30f31e63cf098d046937e5c5c64fe3716c9dc3
 <pre class="r"><code>getwd()</code></pre>
 <pre><code>## [1] &quot;C:/Users/Yoo/Documents/GitHub/skkuRstudy&quot;</code></pre>
 <p>함수에 대한 도움말 문서를 불러오는 함수와 예제를 불러오는 함수</p>
@@ -128,6 +146,7 @@ example(mean)</code></pre>
 ## 
 ## mean&gt; c(xm, mean(x, trim = 0.10))
 ## [1] 8.75 5.50</code></pre>
+<<<<<<< HEAD
 <p>패키지설치: install.packages()함수 사용, ex: install.packages(‘패키지이름’)</p>
 <p>설치한 패키지 사용:library()함수 사용, ex: library(‘ggplot2’)</p>
 <p>파일 불러오기</p>
@@ -212,6 +231,8 @@ job</code></pre>
 <pre><code>##  [1] Lecturer Lecturer Lecturer Lecturer Lecturer Student  Student 
 ##  [8] Student  Student  Student 
 ## Levels: Lecturer Student</code></pre>
+=======
+>>>>>>> 8b30f31e63cf098d046937e5c5c64fe3716c9dc3
 
 
 </div>

@@ -8,7 +8,11 @@ output:
 벡터를 생성하는 c()함수
 
 ```{r}
+<<<<<<< HEAD
 metallica <- c('Lars','James','Jason','Kirk')
+=======
+metallica <- c('Lars','James','Jason','Kirl')
+>>>>>>> 8b30f31e63cf098d046937e5c5c64fe3716c9dc3
 metallica
 ```
 
@@ -38,7 +42,11 @@ data()
 trees
 ```
 
+<<<<<<< HEAD
 setwd()로 설정한 현재 작업공간(Working Directory)이 어디인지 알아보는 getwd()함수
+=======
+setwd()로 설정한 현재 작업공간이 어디인지 알아보는 getwd()함수
+>>>>>>> 8b30f31e63cf098d046937e5c5c64fe3716c9dc3
 
 ```{r}
 getwd()
@@ -54,6 +62,7 @@ help(sum)
 example(mean)
 ```
 
+<<<<<<< HEAD
 패키지설치: install.packages()함수 사용, ex: install.packages('패키지이름')
 
 설치한 패키지 사용:library()함수 사용,  ex: library('ggplot2')
@@ -163,4 +172,17 @@ job <-gl(2,5,labels=c("Lecturer","Student"))
 #또는 job <-factor(job , levels = c(1:2) , labels = c("Lecturer" , "Student"))
 job
 ```
+=======
+
+
+```{r}
+
+```
+
+
+
+
+
+
+>>>>>>> 8b30f31e63cf098d046937e5c5c64fe3716c9dc3
 

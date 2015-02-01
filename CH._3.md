@@ -4,12 +4,20 @@
 
 
 ```r
+<<<<<<< HEAD
 metallica <- c('Lars','James','Jason','Kirk')
+=======
+metallica <- c('Lars','James','Jason','Kirl')
+>>>>>>> 8b30f31e63cf098d046937e5c5c64fe3716c9dc3
 metallica
 ```
 
 ```
+<<<<<<< HEAD
 ## [1] "Lars"  "James" "Jason" "Kirk"
+=======
+## [1] "Lars"  "James" "Jason" "Kirl"
+>>>>>>> 8b30f31e63cf098d046937e5c5c64fe3716c9dc3
 ```
 
 벡터에서 특정 값 빼기
@@ -21,7 +29,11 @@ metallica
 ```
 
 ```
+<<<<<<< HEAD
 ## [1] "Lars"  "James" "Kirk"
+=======
+## [1] "Lars"  "James" "Kirl"
+>>>>>>> 8b30f31e63cf098d046937e5c5c64fe3716c9dc3
 ```
 
 벡터에 특정 값 추가
@@ -33,7 +45,11 @@ metallica
 ```
 
 ```
+<<<<<<< HEAD
 ## [1] "Lars"  "James" "Kirk"  "Rob"
+=======
+## [1] "Lars"  "James" "Kirl"  "Rob"
+>>>>>>> 8b30f31e63cf098d046937e5c5c64fe3716c9dc3
 ```
 
 R의 기본 내장 데이터들 불러오는 함수
@@ -85,7 +101,11 @@ trees
 ## 31  20.6     87   77.0
 ```
 
+<<<<<<< HEAD
 setwd()로 설정한 현재 작업공간(Working Directory)이 어디인지 알아보는 getwd()함수
+=======
+setwd()로 설정한 현재 작업공간이 어디인지 알아보는 getwd()함수
+>>>>>>> 8b30f31e63cf098d046937e5c5c64fe3716c9dc3
 
 
 ```r
@@ -123,6 +143,7 @@ example(mean)
 ## [1] 8.75 5.50
 ```
 
+<<<<<<< HEAD
 패키지설치: install.packages()함수 사용, ex: install.packages('패키지이름')
 
 설치한 패키지 사용:library()함수 사용,  ex: library('ggplot2')
@@ -315,4 +336,15 @@ job
 ##  [8] Student  Student  Student 
 ## Levels: Lecturer Student
 ```
+=======
+
+
+
+
+
+
+
+
+
+>>>>>>> 8b30f31e63cf098d046937e5c5c64fe3716c9dc3
 
