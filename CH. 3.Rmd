@@ -65,25 +65,35 @@ example(mean)
 
 1. 파일 불러오기
 
-.csv(엑셀)파일 불러오기: read.csv(),  ex: read.csv('c:/users/Yoo/Documents/abc.csv', header=True) 
+.csv(엑셀)파일 불러오기: read.csv(),  
+ex: read.csv('c:/users/Yoo/Documents/abc.csv', header=True) 
+
 *header=True는 데이터의 첫번째 열이 변수명일때, 변수명이 아니라면 header=False로 해야됨.
+
 *setwd()로 설정한 현재 작업공간에 데이터 파일이 있으면, 파일명만 입력해도 됨
 예: setwd("c:/users/Yoo/Documents")       
     read.csv("abc.csv")
 
-.spss파일 불러오기: read.spss 
+
+.spss파일 불러오기: read.spss() 
 *이 함수는 library(foreign)을 입력해서 foreign 패키지를 사용하는 상태에서만 쓸 수 있음.
+
 
 .txt와 .dat파일 불러오기: read.delim()
 
 
+
 2. 파일 저장하기
+
 
 write.table(metallica,"Metallica Data.txt",sep="\t",row.names=FALSE) 
 *sep="\t"는 데이터 값들을 탭으로 구분
 
+
 write.table(metallica,"Metallica Data.txt",sep=",",row.names=FALSE) 
 *sep = ","는 데이터 값들을 콤마로 구분
+
+
 
 
 그냥 library()를 입력할 경우, 설치된 패키지들 보여줌

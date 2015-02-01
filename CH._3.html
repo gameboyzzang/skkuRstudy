@@ -133,8 +133,10 @@ example(mean)</code></pre>
 <ol style="list-style-type: decimal">
 <li>파일 불러오기</li>
 </ol>
-<p>.csv(엑셀)파일 불러오기: read.csv(), ex: read.csv(‘c:/users/Yoo/Documents/abc.csv’, header=True) <em>header=True는 데이터의 첫번째 열이 변수명일때, 변수명이 아니라면 header=False로 해야됨. </em>setwd()로 설정한 현재 작업공간에 데이터 파일이 있으면, 파일명만 입력해도 됨 예: setwd(“c:/users/Yoo/Documents”)<br /> read.csv(“abc.csv”)</p>
-<p>.spss파일 불러오기: read.spss *이 함수는 library(foreign)을 입력해서 foreign 패키지를 사용하는 상태에서만 쓸 수 있음.</p>
+<p>.csv(엑셀)파일 불러오기: read.csv(),<br />ex: read.csv(‘c:/users/Yoo/Documents/abc.csv’, header=True)</p>
+<p>*header=True는 데이터의 첫번째 열이 변수명일때, 변수명이 아니라면 header=False로 해야됨.</p>
+<p>*setwd()로 설정한 현재 작업공간에 데이터 파일이 있으면, 파일명만 입력해도 됨 예: setwd(“c:/users/Yoo/Documents”)<br /> read.csv(“abc.csv”)</p>
+<p>.spss파일 불러오기: read.spss() *이 함수는 library(foreign)을 입력해서 foreign 패키지를 사용하는 상태에서만 쓸 수 있음.</p>
 <p>.txt와 .dat파일 불러오기: read.delim()</p>
 <ol start="2" style="list-style-type: decimal">
 <li>파일 저장하기</li>
